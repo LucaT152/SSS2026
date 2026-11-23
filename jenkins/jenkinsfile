@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build Backend') {
+            steps {
+                sh 'docker build -t app-be:latest ./backend'
+            }
+        }
+
+        stage('Build Frontend') {
+            steps {
+                sh 'docker build -t app-fe:latest ./frontend'
+            }
+        }
+    }
+}
