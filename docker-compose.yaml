@@ -1,0 +1,11 @@
+services:
+  frontend:
+    image: banking-fe:1.0
+
+  backend:
+    image: banking-be:1.0
+
+  proxy:
+    image: banking-proxy:1.0
+    ports:
+      - "80:80"
